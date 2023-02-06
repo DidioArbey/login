@@ -13,6 +13,20 @@ dotenv.config({path:'./env/.env'});
 app.use('/resource',express.static('public'));
 app.use('/resource',express.static(__dirname + 'public'));
 
+//establecer e lmotor de plantilla ejs
+app.set('view engine','ejs');
+
+//invocar a bcryptjs
+const bcryptjs = require('bcryptjs');
+
+//variables de session
+const session = require('express-session');
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
 console.log(__dirname);
 
 app.get('/' ,(req, res)=>{
