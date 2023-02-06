@@ -29,6 +29,10 @@ app.use(session({
 
 console.log(__dirname);
 
+//invocar el modulo de la conexion de la base de datos
+const connection = require('./database/db');
+
+
 app.get('/' ,(req, res)=>{
     res.send('Hola mundo')
 })
