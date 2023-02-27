@@ -34,8 +34,18 @@ const connection = require('./database/db');
 
 
 app.get('/' ,(req, res)=>{
-    res.send('Hola mundo')
+    res.render('index',{msg:'Esto es un mensaje desde node'});
 })
+
+app.get('/login' ,(req, res)=>{
+    res.render('login');
+})
+
+app.get('/register' ,(req, res)=>{
+    res.render('register');
+})
+
+
 app.listen(3000, (req , res)=>{
     console.log('servidor corriendo en http://localhost:3000')
 })
